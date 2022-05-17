@@ -1,0 +1,10 @@
+{
+    "extends": [
+        "react-app",
+        "react-app/jest"
+      ],
+      "rules": {
+          "indent": ["warn", 2],
+          "no-console": ["warn"]
+      }
+}
