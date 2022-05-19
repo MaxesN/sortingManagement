@@ -1,1 +1,1 @@
-export { DropZoneCustom } from "./DropZoneCustom"
+export { DropZoneCustom } from './DropZoneCustom'

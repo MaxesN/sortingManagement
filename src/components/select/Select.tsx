@@ -1,22 +1,20 @@
-import ReactSelect, { GroupBase, Props } from "react-select"
-import arrowSelect from "../../assets/arrowSelect.svg"
+import ReactSelect, { GroupBase, Props } from 'react-select'
+import arrowSelect from '../../assets/arrowSelect.svg'
 
-import { FC } from "react"
-import { WrapperIcon } from "./WrapperIcon"
+import { WrapperIcon } from './WrapperIcon'
 
 type CustomProps = {
-    className?: string,
-    classNameIcon?: string
-    withIcon?: boolean
-    image?: string
+  className?: string
+  classNameIcon?: string
+  withIcon?: boolean
+  image?: string
 }
 
 const components = {
   IndicatorSeparator: () => null,
-  IndicatorsContainer: () => 
-    (
-      <img className="tw3-mr-3" src={arrowSelect} alt='arrow'/>
-    ),
+  IndicatorsContainer: () => (
+    <img className="tw3-mr-3" src={arrowSelect} alt="arrow" />
+  ),
 }
 
 const getStyled = (withIcon: boolean) => {
@@ -31,7 +29,6 @@ const getStyled = (withIcon: boolean) => {
       return {
         ...defaultStyles,
         marginLeft: '40px',
-  
       }
     },
     singleValue: (defaultStyles: {}) => {
@@ -43,22 +40,22 @@ const getStyled = (withIcon: boolean) => {
     menu: (defaultStyles: {}) => {
       return {
         ...defaultStyles,
-        'z-index': '50'
+        'z-index': '50',
       }
     },
     control: (defaultStyles: {}) => {
       return {
         ...defaultStyles,
         border: '2px solid #CBD5E1',
-        "&:hover": {
-          borderColor: "none"
+        '&:hover': {
+          borderColor: 'none',
         },
-        "&:focus": {
-          borderColor: "blue"
+        '&:focus': {
+          borderColor: 'blue',
         },
         padding: '2px 0px',
         outline: 'none',
-        boxShadow: 'none'
+        boxShadow: 'none',
       }
     },
   }
@@ -67,45 +64,63 @@ const getStyled = (withIcon: boolean) => {
     menu: (defaultStyles: {}) => {
       return {
         ...defaultStyles,
-        'z-index': '50'
+        'z-index': '50',
       }
     },
     control: (defaultStyles: {}) => {
       return {
         ...defaultStyles,
         border: '2px solid #CBD5E1',
-        "&:hover": {
-          borderColor: "none"
+        '&:hover': {
+          borderColor: 'none',
         },
-        "&:focus": {
-          borderColor: "blue"
+        '&:focus': {
+          borderColor: 'blue',
         },
         padding: '2px 0px',
         outline: 'none',
-        boxShadow: 'none'
+        boxShadow: 'none',
       }
     },
   }
 
-  if(withIcon) return styles
-  
+  if (withIcon) return styles
+
   return styleWithoutIcon
 }
 
-
-
-
 export const Select = <
-Option,
-IsMulti extends boolean = false,
-Group extends GroupBase<Option> = GroupBase<Option>
->({withIcon = false,  className = '',classNameIcon = '', image, ...rest }: Props<Option, IsMulti, Group> & CustomProps) => {
-  if(withIcon) return (
-    <WrapperIcon className={className} classNameIcon={classNameIcon} image={image}>
-      <ReactSelect {...rest} styles={getStyled(withIcon)} components={components} className="tw3-w-full  tw3-relative"/>
-    </WrapperIcon>
-  )
+  Option,
+  IsMulti extends boolean = false,
+  Group extends GroupBase<Option> = GroupBase<Option>
+>({
+  withIcon = false,
+  className = '',
+  classNameIcon = '',
+  image,
+  ...rest
+}: Props<Option, IsMulti, Group> & CustomProps) => {
+  if (withIcon)
+    return (
+      <WrapperIcon
+        className={className}
+        classNameIcon={classNameIcon}
+        image={image}
+      >
+        <ReactSelect
+          {...rest}
+          styles={getStyled(withIcon)}
+          components={components}
+          className="tw3-w-full  tw3-relative"
+        />
+      </WrapperIcon>
+    )
   return (
-    <ReactSelect {...rest} styles={getStyled(withIcon)} components={components} className={`tw3-w-full  tw3-relative ${className}`} />
+    <ReactSelect
+      {...rest}
+      styles={getStyled(withIcon)}
+      components={components}
+      className={`tw3-w-full  tw3-relative ${className}`}
+    />
   )
 }

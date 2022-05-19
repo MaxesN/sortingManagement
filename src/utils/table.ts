@@ -1,36 +1,35 @@
-import { FileWithPath } from "react-dropzone"
+import { FileWithPath } from 'react-dropzone'
 
 export type TableItemType = {
-  task: string;
-  date: Date;
-  type: string;
-  category: string;
+  task: string
+  date: Date
+  type: string
+  category: string
   createBy: {
-      name: string;
-    }[];
+    name: string
+  }[]
   responsible: {
-      name: string;
-  }[];
-  files?: FileWithPath[];
+    name: string
+  }[]
+  files?: FileWithPath[]
 }
 
 export type TableType = TableItemType[]
 
 export const tables: TableType = []
 
-
 export const titles = [
-  {title: 'Padaryta', width: 'none'},
-  {title: 'Užduotys', width: '260px'},
-  {title: 'Terminas', width: '140px'},
-  {title: 'Tipas', width: '120px'},
-  {title: 'Kategorija', width: '260px'},
-  {title: 'Sukūrė', width: '140px'},
-  {title: 'Atsakingas', width: '140px'},
-  {title: 'Failai', width: 'none'},
+  { title: 'Padaryta', width: 'none' },
+  { title: 'Užduotys', width: '260px' },
+  { title: 'Terminas', width: '140px' },
+  { title: 'Tipas', width: '120px' },
+  { title: 'Kategorija', width: '260px' },
+  { title: 'Sukūrė', width: '140px' },
+  { title: 'Atsakingas', width: '140px' },
+  { title: 'Failai', width: 'none' },
 ]
 
 export type TitleType = {
-  title: string;
-  width: string;
+  title: string
+  width: string
 }[]
