@@ -111,7 +111,7 @@ export const Select = <
           {...rest}
           styles={getStyled(withIcon)}
           components={components}
-          className="tw3-w-full  tw3-relative"
+          className="tw3-relative  tw3-w-full"
         />
       </WrapperIcon>
     )

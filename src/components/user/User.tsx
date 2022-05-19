@@ -28,7 +28,7 @@ export const User: FC<Props> = ({ name, lastItem, className = '' }) => {
     <div className={`tw3-relative tw3-group ${className}`}>
       <div
         style={{ background: `${stringToColor(name)}` }}
-        className="tw3-rounded-full tw3-mr-[-8px] tw3-w-[24px] tw3-cursor-pointer tw3-items-center tw3-select-none tw3-text-lg tw3-justify-center tw3-text-white  tw3-h-[24px] tw3-flex"
+        className="tw3-flex tw3-justify-center tw3-items-center tw3-mr-[-8px] tw3-w-[24px] tw3-h-[24px] tw3-text-lg tw3-text-white tw3-rounded-full  tw3-cursor-pointer tw3-select-none"
       >
         {name[0].toUpperCase()}
       </div>

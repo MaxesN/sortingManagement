@@ -12,7 +12,7 @@ export const Switcher: FC<Props> = ({ onChangeIsChecked, isChecked }) => {
         <input
           onChange={onChangeIsChecked}
           checked={isChecked}
-          className="tw3-invisible tw3-hidden tw3-w-0 tw3-h-0 tw3-opacity-0"
+          className="tw3-hidden tw3-invisible tw3-w-0 tw3-h-0 tw3-opacity-0"
           type="checkbox"
           id="switch"
         />
@@ -25,13 +25,13 @@ export const Switcher: FC<Props> = ({ onChangeIsChecked, isChecked }) => {
         }`}
       >
         <label
-          className=" tw3-cursor-pointer tw3-py-2 tw3-pl-4 tw3-pr-3 "
+          className=" tw3-py-2 tw3-pr-3 tw3-pl-4 tw3-cursor-pointer "
           htmlFor="switch"
         >
           Mano
         </label>
         <label
-          className="tw3-cursor-pointer tw3-py-2 tw3-pr-4 tw3-pl-3"
+          className="tw3-py-2 tw3-pr-4 tw3-pl-3 tw3-cursor-pointer"
           htmlFor="switch"
         >
           Deleguotas

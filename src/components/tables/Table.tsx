@@ -20,10 +20,10 @@ export const Table: FC<Props> = ({
   titles,
 }) => {
   return (
-    <div className="tw3-w-full scrollbar tw3-flex-nowrap tw3-overflow-x-auto">
-      <table className="tw3-w-full tw3-mx-auto">
+    <div className="tw3-overflow-x-auto tw3-flex-nowrap tw3-w-full">
+      <table className="tw3-mx-auto tw3-w-full">
         <thead>
-          <tr className="tw3-text-slate-500 tw3-h-[45px] tw3-text-xs">
+          <tr className="tw3-h-[45px] tw3-text-xs tw3-text-slate-500">
             {titles.map((itemTitle, i) => {
               return itemTitle.width === 'none' ? (
                 <td key={i}>
@@ -37,7 +37,7 @@ export const Table: FC<Props> = ({
                 <td key={i} style={{ minWidth: itemTitle.width }}>
                   <div
                     onClick={() => onChangeFiltered(itemTitle.title)}
-                    className="tw3-select-none tw3-cursor-pointer tw3-flex"
+                    className="tw3-flex tw3-cursor-pointer tw3-select-none"
                   >
                     {itemTitle.title}
                     <img
@@ -57,14 +57,14 @@ export const Table: FC<Props> = ({
           {tables.map(
             ({ task, date, category, createBy, responsible, type }, i) => {
               return (
-                <tr key={i} className="tw3-border-y tw3-h-[55px]">
+                <tr key={i} className="tw3-h-[55px] tw3-border-y">
                   <td>
                     <div className="tw3-flex">
                       <Checkbox className="tw3-ml-4" />{' '}
                     </div>
                   </td>
                   <td>
-                    <p className="tw3-w-[250px] tw3-whitespace-nowrap tw3-overflow-hidden tw3-truncate">
+                    <p className="tw3-overflow-hidden tw3-w-[250px] tw3-truncate tw3-whitespace-nowrap">
                       {task}
                     </p>
                   </td>

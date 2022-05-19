@@ -78,14 +78,14 @@ export const Modal: FC<Props> = ({
       {isModal && (
         <div
           onClick={onChangeIsModal}
-          className="tw3-w-full  tw3-px-4 tw3-z-50 tw3-fixed tw3-top-0 tw3-h-full tw3-bg-black/25"
+          className="tw3-fixed tw3-top-0 tw3-z-50 tw3-px-4 tw3-w-full tw3-h-full tw3-bg-black/25"
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="tw3-bg-white tw3-max-w-[1000px] tw3-relative tw3-top-[5%] tw3-mx-auto"
+            className="tw3-relative tw3-top-[5%] tw3-mx-auto tw3-max-w-[1000px] tw3-bg-white"
           >
-            <div className="tw3-p-6 tw3-bg-sky-900 tw3-flex tw3-justify-between">
-              <p className="tw3-text-white tw3-text-2xl tw3-font-medium">
+            <div className="tw3-flex tw3-justify-between tw3-p-6 tw3-bg-sky-900">
+              <p className="tw3-text-2xl tw3-font-medium tw3-text-white">
                 Užduotis
               </p>
               <div
@@ -98,7 +98,7 @@ export const Modal: FC<Props> = ({
             <div className=" tw3-p-5 md:tw3-p-10 lg:tw3-p-20">
               <form className="tw3-text-sm tw3-font-semibold">
                 <div className="tw3-flex">
-                  <div className="tw3-w-[120px] tw3-mt-2">
+                  <div className="tw3-mt-2 tw3-w-[120px]">
                     <p>Užduotis *</p>
                     <p className="tw3-my-11">Tipas</p>
                     <p>Kategorija *</p>

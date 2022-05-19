@@ -32,7 +32,7 @@ export const Input: FC<Props> = ({
         </div>
       </div>
       {!isValid && (
-        <div className="tw3-text-left tw3-mb-1 tw3-text-red-500">
+        <div className="tw3-mb-1 tw3-text-left tw3-text-red-500">
           {type === 'text'
             ? 'Nurodytas neteisingas prisijungimas'
             : 'Nurodytas neteisingas slaptažodis'}

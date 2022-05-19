@@ -38,29 +38,29 @@ export const SortingManagementPage: FC = () => {
 
   return (
     <>
-      <div className="tw3-max-w-[1680px] tw3-text-slate-700 tw3-p-10 tw3-mx-auto">
+      <div className="tw3-p-10 tw3-mx-auto tw3-max-w-[1680px] tw3-text-slate-700">
         <div className="tw3-inline-block">
           <a
-            className="tw3-flex w3-text-sm tw3-outline-none tw3-text-slate-400"
+            className="tw3-flex tw3-text-slate-400 tw3-outline-none w3-text-sm"
             href="/"
           >
-            <img className="tw3-rotate-90 tw3-mr-2" src={arrow} alt="" /> Back
+            <img className="tw3-mr-2 tw3-rotate-90" src={arrow} alt="" /> Back
           </a>
         </div>
-        <div className="lg:tw3-flex tw3-mt-8 tw3-mb-12 tw3-justify-between">
+        <div className="tw3-justify-between tw3-mt-8 tw3-mb-12 lg:tw3-flex">
           <button
             onClick={onChangeIsModal}
-            className="hover:tw3-bg-teal-700 tw3-duration-150 tw3-outline-none tw3-bg-teal-600 tw3-py-2 tw3-rounded-md tw3-font-medium tw3-text-white tw3-px-4 tw3-items-center tw3-flex"
+            className="tw3-flex tw3-items-center tw3-py-2 tw3-px-4 tw3-font-medium tw3-text-white tw3-bg-teal-600 hover:tw3-bg-teal-700 tw3-rounded-md tw3-outline-none tw3-duration-150"
           >
             <img className="tw3-mr-2" src={plus} alt="plus" />
             Sukurti naują įrašą
           </button>
-          <div className="md:tw3-flex tw3-mt-6 lg:tw3-mt-0">
+          <div className="tw3-mt-6 md:tw3-flex lg:tw3-mt-0">
             <Switcher
               onChangeIsChecked={onChangeIsSwitcher}
               isChecked={isSwitcher}
             />
-            <div className=" tw3-my-3 md:tw3-my-0 md:tw3-mx-8 tw3-w-[200px]">
+            <div className=" tw3-my-3 tw3-w-[200px] md:tw3-my-0 md:tw3-mx-8">
               <Select
                 placeholder="list"
                 classNameIcon="tw3-ml-5 tw3-mt-3"
@@ -80,7 +80,7 @@ export const SortingManagementPage: FC = () => {
             </div>
           </div>
         </div>
-        <p className="tw3-text-lg tw3-font-semibold tw3-mb-8">
+        <p className="tw3-mb-8 tw3-text-lg tw3-font-semibold">
           Užbaigtos užduotys
         </p>
         <Table
