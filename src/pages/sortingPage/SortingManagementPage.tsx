@@ -34,7 +34,7 @@ export const SortingManagementPage: FC = () => {
   const onChangeFiltered = (text: string) => setFiltered(text)
   const onChangeIsModal = () => setIsModal(!isModal)
 
-  const addNewItem = (item: TableItemType) => {
+  const onItemCreate = (item: TableItemType) => {
     tables.push(item)
     setIsModal(!isModal)
   }
@@ -64,6 +64,6 @@ export const SortingManagementPage: FC = () => {
         <p className="tw3-text-lg tw3-font-semibold tw3-mb-8">Užbaigtos užduotys</p>
         <Table tables={tables} titles={titles}  filtered={filtered} onChangeFiltered={onChangeFiltered}/>
       </div>
-      <Modal addNewItem={addNewItem} onChangeIsModal={onChangeIsModal} isModal={isModal}/>
+      <Modal onItemCreate={onItemCreate} onChangeIsModal={onChangeIsModal} isModal={isModal}/>
     </>  )
 }

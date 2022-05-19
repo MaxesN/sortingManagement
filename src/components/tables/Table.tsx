@@ -22,7 +22,7 @@ export const Table: FC<Props> = ({filtered, onChangeFiltered, tables, titles}) =
             {
               titles.map((itemTitle, i) => {
                 return itemTitle.width === 'none' 
-                  ? <td key={i}><div className={`${i === 0 ? 'tw3-mr-4' : ''}`}><p>{itemTitle.title}</p></div></td> 
+                  ? <td key={i}><div className={` tw3-select-none ${i === 0 ? 'tw3-mr-4' : ''}`}><p>{itemTitle.title}</p></div></td> 
                   : <td key={i} style={{minWidth: itemTitle.width}}>
                     <div onClick={() => onChangeFiltered(itemTitle.title)} className='tw3-select-none tw3-cursor-pointer tw3-flex'>{itemTitle.title}
                       <img className={`tw3-ml-2 ${filtered === itemTitle.title ? 'tw3-rotate-180' : ''}`} src={arrow} alt="arrow" />

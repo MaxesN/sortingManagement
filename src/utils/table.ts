@@ -1,21 +1,5 @@
 import { FileWithPath } from "react-dropzone"
 
-export const tables: TableType = []
-
-export type TableType = {
-  task: string;
-  date: Date;
-  type: string;
-  category: string;
-  createBy: {
-      name: string;
-    }[];
-  responsible: {
-      name: string;
-  }[];
-  files?: FileWithPath[];
-}[]
-
 export type TableItemType = {
   task: string;
   date: Date;
@@ -29,6 +13,10 @@ export type TableItemType = {
   }[];
   files?: FileWithPath[];
 }
+
+export type TableType = TableItemType[]
+
+export const tables: TableType = []
 
 
 export const titles = [

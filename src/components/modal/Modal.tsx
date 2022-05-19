@@ -9,11 +9,7 @@ import { TableItemType } from '../../utils/table'
 import exit from '../../assets/exit.svg'
 import glass from '../../assets/glass.svg'
 
-type Props = {
-    isModal: boolean
-    onChangeIsModal: () => void
-    addNewItem: (item: TableItemType) => void
-}
+
 
 const categoryOptions = [
   {value: 'Atlikti paskaičiavimą', label: 'Atlikti paskaičiavimą'},
@@ -35,48 +31,40 @@ const responsibleOptions = [
   {value: 'Mary Kingston', label: 'Mary Kingston'},
 ]
 
-
-
-const getPermission = (item: TableItemType) => {
-  if(item.task.length > 5 && item.type !== '' && item.category !== '' && item.createBy[0].name !== '' && item.responsible[0].name !== '') {
-    return true
-  }
-  return false
+const initialValues = {
+  task: "",
+  date: new Date(),
+  type: {value: '', label: ''},
+  category: {value: '', label: ''},
+  createBy: [{value: '', label: ''}],
+  responsible: [{value: '', label: ''}],
+  files: [] as FileWithPath[],
 }
 
-export type File = FileWithPath[]
+type Props = {
+  isModal: boolean
+  onChangeIsModal: () => void
+  onItemCreate: (item: TableItemType) => void
+}
 
-export const Modal: FC<Props> = ({isModal, addNewItem, onChangeIsModal}) => {
-  const [form, setForm] = useState({
-    task: "",
-    date: new Date(),
-    type: {value: '', label: ''},
-    category: {value: '', label: ''},
-    createBy: [{value: '', label: ''}],
-    responsible: [{value: '', label: ''}],
-    files: [] as FileWithPath[],
-  })
+export const Modal: FC<Props> = ({isModal, onItemCreate, onChangeIsModal}) => {
+  const [form, setForm] = useState(initialValues)
 
-  const newItem: TableItemType = {
-    task: form.task,
-    date: form.date,
-    type: form.type.value,
-    category: form.category.value,
-    createBy: [{name: form.createBy[0].value}] ,
-    responsible: [{name: form.responsible[0].value}],
-    files: form.files
-  }
+  const formIsValid = form.task.length > 5 && form.type.value !== '' && form.category.value !== '' && form.createBy[0].value !== '' && form.responsible[0].value !== ''
 
-  const sendItem = (item: TableItemType) => {
-    addNewItem(item)
-    setForm({ 
-      task: "",
-      date: new Date(),
-      type: {value: '', label: ''},
-      category: {value: '', label: ''},
-      createBy: [{value: '', label: ''}],
-      responsible: [{value: '', label: ''}],
-      files: [] as FileWithPath[],})
+  const sendItem = () => {
+    if(formIsValid) {
+      onItemCreate({
+        task: form.task,
+        date: form.date,
+        type: form.type.value,
+        category: form.category.value,
+        createBy: [{name: form.createBy[0].value}] ,
+        responsible: [{name: form.responsible[0].value}],
+        files: form.files
+      })
+      setForm(initialValues)
+    }
   }
   return (
     <>
@@ -112,9 +100,9 @@ export const Modal: FC<Props> = ({isModal, addNewItem, onChangeIsModal}) => {
                     <div className="tw3-flex tw3-justify-end">
                       <button onClick={(e) => {
                         e.preventDefault()
-                        getPermission(newItem) && sendItem(newItem) 
+                        sendItem()
                       }}
-                      className={`tw3-outline-none  tw3-text-white tw3-py-4 tw3-px-16 tw3-rounded-md tw3-text-base ${getPermission(newItem) ? "hover:tw3-bg-sky-600 tw3-bg-sky-500" : 'tw3-cursor-default tw3-bg-sky-500/50'}`}>Išsaugoti</button>
+                      className={`tw3-outline-none  tw3-text-white tw3-py-4 tw3-px-16 tw3-rounded-md tw3-text-base ${formIsValid ? "hover:tw3-bg-sky-600 tw3-bg-sky-500" : 'tw3-cursor-default tw3-bg-sky-500/50'}`}>Išsaugoti</button>
                     </div>
                   </div>
                 </div>
