@@ -1,0 +1,29 @@
+.react-datepicker-popper {
+    z-index: 20 !important;
+}
+
+.react-datepicker__header {
+    background: #0C4A6E !important;
+    color: rgb(202, 202, 202) !important;
+}
+
+.react-datepicker__current-month,
+.react-datepicker__day-name {
+    color: rgb(202, 202, 202) !important;
+}
+
+.react-datepicker__triangle{
+display: none;
+}
+
+.react-datepicker{
+    border: none;
+}
+
+.react-datepicker__month {
+    border: 1px solid #CBD5E1;
+    border-top: none;
+    margin: 0 !important;
+    padding: 5px;
+
+}

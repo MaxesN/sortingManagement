@@ -1,0 +1,1 @@
+export { SortingManagementPage } from './SortingManagementPage'

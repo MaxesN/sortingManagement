@@ -1,10 +1,14 @@
+import { SortingManagementPage } from "./pages/sortingPage"
 
 
 function App() {
 
 
+
   return (
-    <div>ssss</div>
+    <>
+      <SortingManagementPage />
+    </>
   );
 }
 
