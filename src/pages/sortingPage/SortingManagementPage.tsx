@@ -1,6 +1,6 @@
 import { FC, useState } from 'react'
 import { Table } from '../../components'
-import { Switcher } from '../../components/switcher/Switcher'
+import { Switcher } from '../../components/switcher'
 import { Select } from '../../components/select'
 import { Modal } from '../../components/modal'
 import { titles, TableItemType, tables } from '../../utils/table'
@@ -41,7 +41,7 @@ export const SortingManagementPage: FC = () => {
       <div className="tw3-p-10 tw3-mx-auto tw3-max-w-[1680px] tw3-text-slate-700">
         <div className="tw3-inline-block">
           <a
-            className="tw3-flex tw3-text-slate-400 tw3-outline-none w3-text-sm"
+            className="tw3-flex tw3-text-sm tw3-text-slate-400 tw3-outline-none"
             href="/"
           >
             <img className="tw3-mr-2 tw3-rotate-90" src={arrow} alt="" /> Back

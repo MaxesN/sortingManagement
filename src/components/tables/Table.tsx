@@ -1,10 +1,10 @@
 import { FC } from 'react'
-import { Checkbox } from '../checkbox/Checkbox'
-import { User } from '../user/User'
+import { Checkbox } from '../checkbox'
+import { User } from '../user'
+import { TableType, TitleType } from '../../utils/table'
 
 import arrow from '../../assets/arrow.svg'
 import file from '../../assets/file.svg'
-import { TableType, TitleType } from '../../utils/table'
 
 type Props = {
   filtered: string
